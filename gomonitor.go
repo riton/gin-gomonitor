@@ -63,7 +63,7 @@ import (
 //    	// last middleware
 //    	router.Use(gin.Recovery())
 func Start(port int, asps []aspects.Aspect) {
-	var monitor *mon.Monitor = mon.NewMonitor(fmt.Sprintf(":%d", port))
+	var monitor *mon.Monitor = mon.NewMonitor(fmt.Sprintf("127.0.0.1:%d", port))
 	for _, aspect := range asps {
 		monitor.AddAspect(aspect)
 	}
